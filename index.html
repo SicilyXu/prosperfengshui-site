@@ -333,7 +333,7 @@
     <div class="left">
       <p class="idx reveal">01 — <span class="zh">罗盘</span><span class="en">Compass</span></p>
       <h2 class="reveal"><span class="zh">一盘天地，<br>八方气象</span><span class="en">One Compass,<br>Eight Directions</span></h2>
-      <p class="lead reveal"><span class="zh">罗盘以二十八宿、二十四山与八卦层层相叠，刻度之间，是古人观天察地的方法。本罗盘按南半球排布：离在北，坎在南。点选一卦，罗盘便转向它所对应的方位，主题色也随五行流转。</span><span class="en">Twenty-eight lunar mansions, twenty-four mountains and the eight trigrams: the compass layers the ways the ancients read heaven and earth. This compass uses the Southern Hemisphere layout, with Li in the north and Kan in the south. Choose a trigram and it turns to face that direction, its colour shifting with the element.</span></p>
+      <p class="lead reveal"><span class="zh">罗盘以二十八宿、二十四山与八卦层层相叠，刻度之间，是古人观天察地的方法。本罗盘全部按南半球排布：离在北，坎在南，子在南，午在北。点选一卦，罗盘便转向它所对应的方位，主题色也随五行流转。</span><span class="en">Twenty-eight lunar mansions, twenty-four mountains and the eight trigrams: the compass layers the ways the ancients read heaven and earth. This compass follows the Southern Hemisphere layout throughout: Li in the north, Kan in the south, and the Zi branch in the south. Choose a trigram and it turns to face that direction, its colour shifting with the element.</span></p>
       <div class="tri-grid reveal" id="triGrid"></div>
       <div class="info reveal" id="info">
         <h3></h3>
@@ -591,10 +591,10 @@
   }
   const circle=(g,r,lw=3)=>{g.lineWidth=lw;g.beginPath();g.arc(0,0,r,0,Math.PI*2);g.stroke();};
   const rad = a=>a*Math.PI/180;
-  function textRing(g,items,r,size,weight=600){
+  function textRing(g,items,r,size,weight=600,south=false){
     g.font=`${weight} ${size}px ${FONT}`;
     const step=360/items.length;
-    items.forEach((s,i)=>{g.save();g.rotate(rad(i*step));g.translate(0,-r);g.fillText(s,0,0);g.restore();});
+    items.forEach((s,i)=>{g.save();g.rotate(rad(south?180-i*step:i*step));g.translate(0,-r);g.fillText(s,0,0);g.restore();});
   }
   function spokes(g,n,r0,r1,lw=2,offset=0){
     g.lineWidth=lw;
@@ -637,7 +637,7 @@
   compass.add(addLayer(g=>{
     circle(g,800,3);circle(g,690,3);
     spokes(g,24,690,800,2,7.5);
-    textRing(g,MOUNTAINS,745,62,600);
+    textRing(g,MOUNTAINS,745,62,600,true);
   },{opacity:.95,z:.02}));
 
   // 后天八卦(定向)
@@ -663,7 +663,7 @@
   compass.add(addLayer(g=>{
     circle(g,535,3);circle(g,405,3);
     spokes(g,12,405,535,2,15);
-    textRing(g,BRANCHES,470,74,600);
+    textRing(g,BRANCHES,470,74,600,true);
   },{opacity:.8,speed:-.05,z:.04}));
 
   // 太极
