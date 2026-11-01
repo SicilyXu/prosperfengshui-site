@@ -342,7 +342,7 @@
   <div class="navr">
     <ul id="menu">
       <li><a href="#compass"><span class="zh">罗盘</span><span class="en">Compass</span></a></li>
-      <li><a href="#prophecy"><span class="zh">预言</span><span class="en">Prophecy</span></a></li>
+      <li><a href="#prophecy"><span class="zh">九运</span><span class="en">Period 9</span></a></li>
       <li><a href="#cases"><span class="zh">案例</span><span class="en">Cases</span></a></li>
       <li><a href="#events"><span class="zh">讲座</span><span class="en">Talks</span></a></li>
       <li><a href="#services"><span class="zh">服务</span><span class="en">Services</span></a></li>
@@ -382,7 +382,7 @@
 
 
   <section id="prophecy">
-    <p class="idx reveal">02 — <span class="zh">预言</span><span class="en">Prophecy</span></p>
+    <p class="idx reveal">02 — <span class="zh">九运</span><span class="en">Period 9</span></p>
     <h2 class="reveal"><span class="zh">180年时空回溯</span><span class="en">The 180-Year Cycle</span></h2>
     <p class="sub reveal"><span class="zh">从“新金山”到九运墨尔本财富大预言</span><span class="en">From “Marvelous Melbourne” to the Period 9 Wealth Prophecy</span></p>
 
@@ -876,7 +876,7 @@
   const wedgeTarget={rot:0};
   TRIGRAMS.forEach((t,i)=>{
     const b=document.createElement('button');b.className='tri';
-    b.innerHTML=`<div class="yao">${t.bits.map(v=>`<b class="${v?'yang':'yin'}"><i></i><i></i><i></i></b>`).join('')}</div><span>${t.n}</span><small><span class="zh">${t.dir}</span><span class="en">${t.dirEn}</span></small>`;
+    b.innerHTML=`<div class="yao">${t.bits.map(v=>`<b class="${v?'yang':'yin'}"><i></i><i></i><i></i></b>`).join('')}</div><span>${t.n}</span><small><span class="zh">五行属${t.el}</span><span class="en">${t.elEn}</span></small>`;
     b.addEventListener('click',()=>select(i,b));
     b.addEventListener('pointerenter',()=>cursorEl.classList.add('big'));
     b.addEventListener('pointerleave',()=>cursorEl.classList.remove('big'));
@@ -897,7 +897,7 @@
     gsap.to(accent,{r:col.r,g:col.g,b:col.b,duration:1.2,ease:'power2.out'});
     document.documentElement.style.setProperty('--accent',t.c);
     gsap.fromTo(state,{spin:7},{spin:1,duration:2.6,ease:'power3.out'});
-    info.innerHTML=`<h3><span class="zh">${t.n}宅<em>五行属${t.el} · ${t.m}三山</em></span><span class="en">${t.n} · ${t.en} House<em>${t.elEn} · ${t.dirEn}</em></span></h3><p class="zh"><b>${t.t}</b><br>${t.d}</p><p class="en"><b>${t.tEn}</b><br>${t.dEn}</p>`;
+    info.innerHTML=`<h3><span class="zh">${t.n}宅<em>五行属${t.el} · ${t.m}三山</em></span><span class="en">${t.n} · ${t.en} House<em>${t.elEn}</em></span></h3><p class="zh"><b>${t.t}</b><br>${t.d}</p><p class="en"><b>${t.tEn}</b><br>${t.dEn}</p>`;
     gsap.fromTo(info.children,{opacity:0,y:14},{opacity:1,y:0,duration:.6,stagger:.08});
   }
 
