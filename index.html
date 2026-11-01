@@ -149,6 +149,43 @@
   .two p{color:var(--dim);line-height:2;font-size:14px;letter-spacing:.04em}
   @media(max-width:900px){.about-grid{grid-template-columns:1fr}.portrait{max-width:300px;margin:12vh 0 0 14px}.two{grid-template-columns:1fr}}
 
+
+  /* prophecy */
+  #prophecy{padding-top:12vh;padding-bottom:12vh}
+  #prophecy .sub{margin:-1vh 0 3vh;color:var(--accent);letter-spacing:.14em;font-size:clamp(15px,1.5vw,20px)}
+  .stamp{border:1px dashed var(--accent);background:rgba(228,184,98,.06);padding:22px 26px;max-width:880px;margin-bottom:6vh}
+  .stamp h3{font-size:16px;letter-spacing:.14em;color:var(--accent);margin-bottom:10px;font-weight:600}
+  .stamp p{color:var(--dim);font-size:13.5px;line-height:1.9;letter-spacing:.04em}
+  .stamp p b{color:var(--fg);font-weight:600}
+  .tline{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1000px;margin:2vh 0 7vh}
+  .tline .rail{position:absolute;left:12%;right:12%;top:15px;height:1px;background:linear-gradient(90deg,var(--accent),rgba(228,184,98,.25) 50%,var(--accent));transform-origin:left;transform:scaleX(0)}
+  .tline .rail em{position:absolute;left:50%;top:-30px;transform:translateX(-50%);font-style:normal;font-size:13px;letter-spacing:.3em;color:var(--accent);white-space:nowrap}
+  .tnode{position:relative;text-align:center;padding-top:44px}
+  .tnode::before{content:"";position:absolute;left:50%;top:8px;width:15px;height:15px;margin-left:-8px;border:1px solid var(--accent);background:var(--bg);border-radius:50%;box-shadow:0 0 0 5px rgba(228,184,98,.12)}
+  .tnode b{display:block;font-size:clamp(22px,2.6vw,36px);letter-spacing:.1em;color:var(--accent);font-weight:600;margin-bottom:8px}
+  .tnode span.t{display:block;color:var(--dim);font-size:13.5px;line-height:1.9;letter-spacing:.04em}
+  .pgrid{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:5vw;align-items:center;margin-bottom:7vh}
+  .pmap{width:100%;max-width:340px;height:auto;display:block}
+  .pmap text{font-family:inherit}
+  .quote{border-left:2px solid var(--accent);padding:6px 0 6px 26px;margin:0 0 5vh;max-width:880px;font-size:clamp(15px,1.5vw,19px);line-height:2.1;letter-spacing:.08em}
+  .quote cite{display:block;margin-top:10px;font-style:normal;font-size:13px;color:var(--accent);letter-spacing:.2em}
+  .ptext p{color:var(--dim);line-height:2.05;font-size:14.5px;letter-spacing:.04em;margin-bottom:14px;max-width:52em}
+  .ptext p b,.ptext li b{color:var(--fg);font-weight:600}
+  .ptext ul{list-style:none;margin:0 0 14px;padding:0;max-width:52em}
+  .ptext li{border:1px solid var(--line);background:rgba(10,12,16,.68);padding:16px 20px;margin-bottom:12px;color:var(--dim);line-height:2;font-size:14px;letter-spacing:.03em}
+  .ptext h3{font-size:20px;letter-spacing:.14em;font-weight:600;margin:5vh 0 14px;color:var(--fg)}
+  .tide{margin-top:6vh}
+  .tide h3{font-size:clamp(20px,2.2vw,28px);letter-spacing:.12em;margin-bottom:10px;font-weight:600}
+  .tide>p{color:var(--dim);line-height:2;font-size:14px;letter-spacing:.04em;margin-bottom:22px;max-width:46em}
+  .tide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px}
+  .tcard{border:1px solid var(--line);background:rgba(10,12,16,.7);backdrop-filter:blur(10px);padding:28px 24px;transition:border-color .4s,transform .4s}
+  .tcard:hover{border-color:var(--accent);transform:translateY(-6px)}
+  .tcard i{font-style:normal;font-size:28px;display:block;margin-bottom:12px}
+  .tcard b{display:block;font-weight:600;font-size:15px;line-height:1.9;letter-spacing:.05em}
+  .tcard small{display:block;margin-top:8px;color:var(--dim);font-size:12.5px;line-height:1.8}
+  @media(max-width:900px){.pgrid{grid-template-columns:1fr}.pmap{margin:0 auto}}
+  @media(max-width:560px){.tline{grid-template-columns:1fr;gap:34px}.tline .rail{left:7px;right:auto;width:1px;height:auto;top:10px;bottom:10px;transform-origin:top;background:linear-gradient(var(--accent),rgba(228,184,98,.25))}.tline .rail em{display:none}.tnode{text-align:left;padding:0 0 0 34px}.tnode::before{left:0;top:6px;margin-left:0}}
+
   /* cases */
   #cases{padding-top:12vh;padding-bottom:12vh}
   #cases .lead{max-width:48em;margin-bottom:1.6vh}
@@ -298,13 +335,14 @@
 <div class="cursor" id="cursor"></div>
 <canvas id="gl"></canvas>
 <div id="progress"></div>
-<div id="dots"><a href="#hero"></a><a href="#compass"></a><a href="#cases"></a><a href="#events"></a><a href="#services"></a><a href="#contact"></a><a href="#about"></a></div>
+<div id="dots"><a href="#hero"></a><a href="#compass"></a><a href="#prophecy"></a><a href="#cases"></a><a href="#events"></a><a href="#services"></a><a href="#contact"></a><a href="#about"></a></div>
 
 <nav id="nav">
   <a class="logo" href="#hero"><span class="zh">王居正</span><span class="en">PROSPER WANG</span></a>
   <div class="navr">
     <ul id="menu">
       <li><a href="#compass"><span class="zh">罗盘</span><span class="en">Compass</span></a></li>
+      <li><a href="#prophecy"><span class="zh">预言</span><span class="en">Prophecy</span></a></li>
       <li><a href="#cases"><span class="zh">案例</span><span class="en">Cases</span></a></li>
       <li><a href="#events"><span class="zh">讲座</span><span class="en">Talks</span></a></li>
       <li><a href="#services"><span class="zh">服务</span><span class="en">Services</span></a></li>
@@ -342,8 +380,75 @@
     </div>
   </section>
 
+
+  <section id="prophecy">
+    <p class="idx reveal">02 — <span class="zh">预言</span><span class="en">Prophecy</span></p>
+    <h2 class="reveal"><span class="zh">180年时空回溯</span><span class="en">The 180-Year Cycle</span></h2>
+    <p class="sub reveal"><span class="zh">从“新金山”到九运墨尔本财富大预言</span><span class="en">From “Marvelous Melbourne” to the Period 9 Wealth Prophecy</span></p>
+
+    <div class="stamp reveal">
+      <h3>📜 <span class="zh">独立存证时间戳</span><span class="en">Digital Verification Timestamp</span></h3>
+      <p><span class="zh"><b>首次官方发布收录时间：</b>2026年6月14日</span><span class="en"><b>Published on:</b> June 14, 2026</span></p>
+      <p><span class="zh"><b>核心理论依据：</b>三元九运零正神</span><span class="en"><b>Core theory:</b> The Three Cycles, Nine Periods, and the Zero and True Spirits</span></p>
+      <p><span class="zh">本页面所载宏观周期及地运预言已通过全球第三方独立服务器进行不可篡改的数字快照存证，以证古典堪舆学之原理与实证。</span><span class="en">The macro cycles and land-energy forecasts on this page have been preserved as tamper-proof digital snapshots on independent third-party servers worldwide, bearing witness to the principles and evidence of classical geomancy.</span></p>
+    </div>
+
+    <div class="tline">
+      <div class="rail"><em><span class="zh">相隔 180 年</span><span class="en">180 YEARS APART</span></em></div>
+      <div class="tnode reveal"><b>1844 – 1864</b><span class="t"><span class="zh">上一次离火运<br>1851 年发现金矿 · “新金山”</span><span class="en">The previous Fire period<br>Gold found in 1851 · “New Gold Mountain”</span></span></div>
+      <div class="tnode reveal"><b>2024 – 2044</b><span class="t"><span class="zh">下元九运 · 离火运<br>墨尔本再度汇聚人口与资产</span><span class="en">Period 9 · the Fire period<br>Melbourne gathers people and capital once more</span></span></div>
+    </div>
+
+    <div class="quote reveal">
+      <span class="zh">“阴阳二字看零正，坐向须知病。若遇正神正位装，发水入零堂。零堂正向须知好，认取来山脑。水上排龙点位装，积粟万箱仓。”</span>
+      <span class="en">“Discern Yin and Yang through the Zero and True Spirits… When the True Spirit sits in its rightful palace, wealth flows into the Zero Hall.”</span>
+      <cite><span class="zh">——《天玉经》· 解码南半球九运“正神”与“零神”</span><span class="en">— Tian Yu Jing · Decoding “True Spirit” &amp; “Zero Spirit”</span></cite>
+    </div>
+
+    <div class="pgrid">
+      <svg class="pmap reveal" viewBox="0 0 340 380" fill="none" stroke="#e4b862" stroke-width="1.2">
+    <circle cx="170" cy="190" r="165" opacity=".22"/><circle cx="170" cy="190" r="120" opacity=".14"/>
+    <path d="M170 10v360M20 190h300" opacity=".14"/>
+    <path d="M105 105l40-62 28 38 22-28 45 52z" fill="rgba(228,184,98,.12)"/>
+    <path d="M70 285q25-14 50 0t50 0 50 0 50 0M85 308q25-14 50 0t50 0 50 0 50 0M100 331q25-14 50 0t50 0 50 0 50 0" stroke="#59b2ff" opacity=".8"/>
+    <circle cx="170" cy="190" r="6" fill="#e4b862"/>
+    <g fill="#ece6d6" stroke="none" font-size="14" letter-spacing="3" text-anchor="middle">
+      <text x="170" y="26" fill="#e4b862">北 · 离火 · 正神</text>
+      <text x="170" y="368" fill="#59b2ff">南 · 坎水 · 零神</text>
+      <text x="170" y="216" font-size="12" opacity=".8">墨尔本</text>
+    </g>
+  </svg>
+      <div class="ptext reveal">
+        <p><span class="zh">通俗地来说，易学周期的演变如同历史车轮，每一个二十年都有一个“大领导”当运。<b>2024–2044年，正是【火】当大领导，即下元九运（离火运）。</b></span><span class="en">In simple terms, every 20-year macro cycle is governed by a dominant element. <b>The period from 2024 to 2044 is completely ruled by the [Fire] element (Period 9).</b></span></p>
+        <p><span class="zh">根据南半球特有的空间气场规则：</span><span class="en">According to the structural laws of spatial energy unique to the Southern Hemisphere:</span></p>
+        <ul>
+          <li><span><span class="zh"><b>正神（大领导的本阵）</b>：代表热的地方。在南半球，<b>【北方】属火</b>。领导的地盘要稳定、居高临下，所以<b>北方要见山（高地、高楼）</b>。</span><span class="en"><b>The True Spirit (the ruler’s palace):</b> the source of heat. In the Southern Hemisphere, <b>the North corresponds to Fire</b>. The ruler’s territory must be stable and elevated, so <b>the North must see mountains (high ground or skyscrapers)</b>.</span></span></li>
+          <li><span><span class="zh"><b>零神（与领导对抗的对手）</b>：代表冷的地方。在南半球，<b>【南方】属水</b>。对手的地盘要灵活、变动、卑下，所以<b>南方要见水（海洋、河流港口）</b>。</span><span class="en"><b>The Zero Spirit (the dynamic wealth force):</b> the source of cold. In the Southern Hemisphere, <b>the South corresponds to Water</b>. To capture this dynamic current, <b>the South must see water (oceans, ports or bays)</b>.</span></span></li>
+        </ul>
+        <p><span class="zh">山管人丁水管财。墨尔本大局北面枕山（分水岭脉），南面见浩瀚的菲利普港湾，完美契合了九运最顶级的发财发丁风水格局——<b>“北山南水”</b>。此乃因地制宜之正统易学，大吉。</span><span class="en">Mountains govern people and health; water governs wealth. With ranges safeguarding the north and the vast Port Phillip Bay to the south, Melbourne aligns with the ultimate Period 9 layout for prosperity: <b>“Mountains in the North, Water in the South.”</b></span></p>
+      </div>
+    </div>
+
+    <div class="ptext reveal">
+      <h3><span class="zh">180年时空回溯 —— “新金山”历史的惊人重演</span><span class="en">The 180-Year Reenactment: the Birth of “New Gold Mountain”</span></h3>
+      <p><span class="zh">三元九运每 180 年为一个大循环。上一次全球由【火】当大领导的时代，要精准回溯到 <b>1844年 – 1864年</b>（2024–2044 减去 180年周期）。历史绝非巧合，而是地运规律的必然法则：</span><span class="en">The Three Cycles run on a 180-year loop. The last time Fire ruled was precisely <b>1844–1864</b> (2024–2044 minus 180 years). History is never a coincidence; it is the manifestation of land energy:</span></p>
+      <p><span class="zh"><b>在1850年左右（即上一次离火运的核心期）</b>，维多利亚州骤然发现巨大金矿，世界级的淘金热疯狂席卷墨尔本。这座城市在华人圈一举成名，被称为<b>“新金山”</b>。截至1854年底，已有9万人为了实现黄金梦来到这里。诸如巴拉瑞特和班迪戈等小城迅速崛起，铁路、公路、图书馆、剧院、美术馆和股票交易市场在短短几年内疯狂涌现。到了19世纪80年代，墨尔本被誉为“不可思议的墨尔本（Marvelous Melbourne）”，一跃成为同时代全球最大、最繁华的大都市之一。</span><span class="en"><b>Around 1850 (the core of the previous Fire period)</b>, massive gold deposits were found in Victoria and a world-class gold rush swept Melbourne. Chinese immigrants named it <b>“New Gold Mountain”</b>. By the end of 1854, some 90,000 fortune seekers had arrived. Towns like Ballarat and Bendigo grew overnight; railways, libraries, theatres, galleries and a stock exchange appeared within a few years. By the 1880s the city was dubbed <b>“Marvelous Melbourne”</b>, among the largest and wealthiest on Earth.</span></p>
+      <p><span class="zh">站在现在的时空节点，当运的【火】大领导再度君临南半球。墨尔本正在完美重演180年前的人口、资产与产业的疯狂大汇聚。这并非盲目风口，而是天然地运被离火能量再度点燃的必然结果。</span><span class="en">Today the dominant Fire energy leads the Southern Hemisphere again, and Melbourne is reenacting its 180-year-old script of capital, population and industry gathering. This is no blind trend, but the natural result of the land being re-ignited by Period 9.</span></p>
+    </div>
+
+    <div class="tide">
+      <h3 class="reveal">🌊 <span class="zh">海啸前的退潮</span><span class="en">The Retraction Before the Tsunami</span></h3>
+      <p class="reveal"><span class="zh">许多人在面对当下的调整或迷茫时容易犹豫不决。希望您牢记最朴素的自然物理规律与地运法则：</span><span class="en">Many hesitate when facing adjustment or uncertainty. Keep in mind the simplest laws of nature and of land energy:</span></p>
+      <div class="tide-grid">
+        <div class="tcard reveal"><i>🌊</i><b><span class="zh">海啸爆发之前，必有疯狂的退潮</span><span class="en">Before a mega tsunami hits, the ocean experiences a massive retraction.</span></b></div>
+        <div class="tcard reveal"><i>🌋</i><b><span class="zh">火山喷发之前，地壳反而会向下塌陷</span><span class="en">Before a volcanic eruption, the earth’s crust depresses inward.</span></b></div>
+        <div class="tcard reveal"><i>📈</i><b><span class="zh">股市史诗级暴涨前，必有惨烈的下跌清洗</span><span class="en">Before an epic market rally, a severe correction shakes out weak hands.</span></b></div>
+      </div>
+    </div>
+  </section>
+
   <section id="cases">
-    <p class="idx reveal">02 — <span class="zh">案例</span><span class="en">Cases</span></p>
+    <p class="idx reveal">03 — <span class="zh">案例</span><span class="en">Cases</span></p>
     <h2 class="reveal"><span class="zh">墨尔本风水案例</span><span class="en">Melbourne Case Studies</span></h2>
     <p class="lead reveal zh">风水，本质是对环境变化的研究。山川、河流与建筑，短期看似不动，长期却都在变迁。居正结合现代物理学与古典堪舆，解读墨尔本楼宇与街区背后的气场流转。</p>
     <p class="lead reveal en">At heart, feng shui is the study of how environments change. Landforms, rivers and buildings seem fixed in the short term, yet all shift over time. Master Prosper combines modern physics with classical geomancy to read the energy flowing through Melbourne’s buildings and neighbourhoods.</p>
@@ -416,7 +521,7 @@
   </section>
 
   <section id="events">
-    <p class="idx reveal">03 — <span class="zh">讲座</span><span class="en">Talks</span></p>
+    <p class="idx reveal">04 — <span class="zh">讲座</span><span class="en">Talks</span></p>
     <h2 class="reveal"><span class="zh">讲座与分享</span><span class="en">Talks &amp; Seminars</span></h2>
     <div class="event-grid">
       <figure class="event reveal"><div class="slides"><img src="assets/expo.jpg" alt="" decoding="async"><img src="assets/expo2.jpg" alt="" decoding="async"></div><figcaption><b class="zh">墨尔本会展中心房产展：Prosper 老师讲解风水知识</b><b class="en">Master Prosper shares feng shui insights at the Melbourne Property Expo.</b></figcaption></figure>
@@ -427,7 +532,7 @@
   </section>
 
   <section id="services">
-    <p class="idx reveal">04 — <span class="zh">服务</span><span class="en">Services</span></p>
+    <p class="idx reveal">05 — <span class="zh">服务</span><span class="en">Services</span></p>
     <h2 class="reveal"><span class="zh">服务项目</span><span class="en">Services</span></h2>
     <div class="cards">
       <div class="card reveal"><span class="no">I</span><h3><span class="zh">家居风水</span><span class="en">Residential</span></h3><p class="en-line">Residential Feng Shui</p></div>
@@ -443,7 +548,7 @@
   </section>
 
   <section id="contact">
-    <p class="idx reveal">05 — <span class="zh">联系</span><span class="en">Contact</span></p>
+    <p class="idx reveal">06 — <span class="zh">联系</span><span class="en">Contact</span></p>
     <h2 class="reveal"><span class="zh">预约咨询</span><span class="en">Book a Consultation</span></h2>
     <div class="contact-grid">
       <a class="ccard reveal" href="tel:0479111646">
@@ -466,7 +571,7 @@
     <div class="about-grid">
       <figure class="portrait reveal"><img src="assets/about.jpg" alt="Prosper 王居正" decoding="async"><i></i></figure>
       <div class="about-text">
-        <p class="idx reveal">06 — <span class="zh">关于</span><span class="en">About</span></p>
+        <p class="idx reveal">07 — <span class="zh">关于</span><span class="en">About</span></p>
         <h2 class="reveal"><span class="zh">王居正</span><span class="en">Prosper Wang</span></h2>
         <p class="role reveal"><span class="zh">莫纳什大学商科硕士 · 专业风水命理顾问</span><span class="en">Master of Commerce, Monash University · Feng Shui &amp; Destiny Consultant</span></p>
         <p class="lead reveal zh">服务对象涵盖大型连锁企业、中小商户、高端公寓与各类豪宅。居正秉持“不言玄门师承，只论原理与实证”，把东方传统堪舆与现代数理、环境心理学相互印证，为您规划一份理性、可落地的运势蓝图。</p>
@@ -740,6 +845,7 @@
     const keys=[
       ['hero',   {x:0,y:N?2.2:-.15,s:N?.68:1.12,tilt:1.0,dim:N?.7:.55}],
       ['compass',{x:N?0:2.15,y:N?1.9:0,s:N?.62:.9,tilt:.32,dim:1}],
+      ['prophecy',{x:0,y:0,s:N?.9:1.55,tilt:.6,dim:.18}],
       ['cases',  {x:0,y:0,s:N?.9:1.7,tilt:.5,dim:.16}],
       ['events', {x:0,y:.3,s:N?.9:1.6,tilt:.9,dim:.2}],
       ['services',{x:0,y:0,s:N?.9:1.45,tilt:.95,dim:.22}],
@@ -810,6 +916,7 @@
     gsap.fromTo(el,{opacity:0,y:50},{opacity:1,y:0,duration:1,ease:'power3.out',
       scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none reverse'}});
   });
+  gsap.to('.tline .rail',{scaleX:1,scaleY:1,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:'.tline',start:'top 80%'}});
   function intro(){
     gsap.set('#title span',{yPercent:110,opacity:0,rotateX:-70});
     const t=gsap.timeline({delay:.5});
