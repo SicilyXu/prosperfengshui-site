@@ -332,8 +332,8 @@
   <section id="compass">
     <div class="left">
       <p class="idx reveal">01 — <span class="zh">罗盘</span><span class="en">Compass</span></p>
-      <h2 class="reveal"><span class="zh">一盘天地，<br>八方气象</span><span class="en">One Compass,<br>Eight Directions</span></h2>
-      <p class="lead reveal"><span class="zh">罗盘以二十八宿、二十四山与八卦层层相叠，刻度之间，是古人观天察地的方法。本罗盘全部按南半球排布：离在北，坎在南，子在南，午在北。点选一卦，罗盘便转向它所对应的方位，主题色也随五行流转。</span><span class="en">Twenty-eight lunar mansions, twenty-four mountains and the eight trigrams: the compass layers the ways the ancients read heaven and earth. This compass follows the Southern Hemisphere layout throughout: Li in the north, Kan in the south, and the Zi branch in the south. Choose a trigram and it turns to face that direction, its colour shifting with the element.</span></p>
+      <h2 class="reveal"><span class="zh">罗盘量天，<br>吉凶自显</span><span class="en">The Compass Measures Heaven,<br>Fortune Reveals Itself</span></h2>
+      <p class="lead reveal"><span class="zh">罗盘用以分金八卦、二十四山。刻度之间，洞见天地玄奥。点选卦象，可窥八卦定宅之秘。</span><span class="en">The compass divides the metal lines, the eight trigrams and the twenty-four mountains. Between its graduations lie the mysteries of heaven and earth. Choose a trigram to glimpse how the eight houses are read.</span></p>
       <div class="tri-grid reveal" id="triGrid"></div>
       <div class="info reveal" id="info">
         <h3></h3>
@@ -498,14 +498,14 @@
 
   /* ---------- 数据 ---------- */
   const TRIGRAMS = [
-    {n:'乾',en:'Qian',az:225,dir:'西南',dirEn:'South-west',el:'金',elEn:'Metal',c:'#eadfb4',bits:[1,1,1],t:'天 · 刚健',tEn:'Heaven · Strength',d:'主事业与贵人，宜书房、办公之位，取自强不息之意。',dEn:'Career and benefactors. Suits a study or office, in the spirit of tireless self-improvement.'},
-    {n:'坎',en:'Kan',az:180,dir:'正南',dirEn:'South',el:'水',elEn:'Water',c:'#59b2ff',bits:[0,1,0],t:'水 · 智慧',tEn:'Water · Wisdom',d:'主智慧与财源，宜气流通达，忌淤塞阴湿。',dEn:'Wisdom and income. Favours open flow; avoid stagnant, damp corners.'},
-    {n:'艮',en:'Gen',az:135,dir:'东南',dirEn:'South-east',el:'土',elEn:'Earth',c:'#d9a441',bits:[0,0,1],t:'山 · 止静',tEn:'Mountain · Stillness',d:'主稳重与积累，宜静守之处，不宜喧闹。',dEn:'Steadiness and accumulation. Suits quiet places, not noisy ones.'},
-    {n:'震',en:'Zhen',az:90,dir:'正东',dirEn:'East',el:'木',elEn:'Wood',c:'#62d99c',bits:[1,0,0],t:'雷 · 启动',tEn:'Thunder · Initiative',d:'主生发与开端，宜迎晨光，利于创业起步。',dEn:'Growth and new beginnings. Welcomes morning light; good for starting out.'},
-    {n:'巽',en:'Xun',az:45,dir:'东北',dirEn:'North-east',el:'木',elEn:'Wood',c:'#7fe0a8',bits:[0,1,1],t:'风 · 流通',tEn:'Wind · Circulation',d:'主财运流通与文昌，宜通风明亮，气畅则事顺。',dEn:'Flowing wealth and scholarship. Wants light and airiness; when qi moves, matters follow.'},
-    {n:'离',en:'Li',az:0,dir:'正北',dirEn:'North',el:'火',elEn:'Fire',c:'#ff6a45',bits:[1,0,1],t:'火 · 光明',tEn:'Fire · Brightness',d:'主名声与热情，宜明堂开阔，取光明显达之意。',dEn:'Reputation and warmth. Suits an open, bright hall, for clarity and recognition.'},
-    {n:'坤',en:'Kun',az:315,dir:'西北',dirEn:'North-west',el:'土',elEn:'Earth',c:'#e0b060',bits:[0,0,0],t:'地 · 厚载',tEn:'Earth · Receptivity',d:'主家宅安稳与人缘，宜厚重平实，利于长居。',dEn:'A settled home and good relationships. Favours solid, grounded spaces for long-term living.'},
-    {n:'兑',en:'Dui',az:270,dir:'正西',dirEn:'West',el:'金',elEn:'Metal',c:'#f0e6c0',bits:[1,1,0],t:'泽 · 喜悦',tEn:'Lake · Joy',d:'主口才与欢聚，宜会客、宴饮之所。',dEn:'Eloquence and gatherings. Suits places for guests and feasts.'},
+    {n:'乾',en:'Qian',az:225,dir:'西南',dirEn:'South-west',el:'金',elEn:'Metal',c:'#eadfb4',bits:[1,1,1],t:'天 · 刚健',tEn:'Heaven · Strength',m:'戌乾亥',d:'乾宅阴面为重，汤谷伏而吉，燧而凶。',dEn:'Qian houses lean on the yin side: hidden Tanggu brings fortune, while a sudden blaze brings harm.'},
+    {n:'坎',en:'Kan',az:180,dir:'正南',dirEn:'South',el:'水',elEn:'Water',c:'#59b2ff',bits:[0,1,0],t:'水 · 智慧',tEn:'Water · Wisdom',m:'壬子癸',d:'后土防其祸祟。若伤伏位难安宁。',dEn:'Guard the earth behind against misfortune; if the hidden position is harmed, peace is hard to find.'},
+    {n:'艮',en:'Gen',az:135,dir:'东南',dirEn:'South-east',el:'土',elEn:'Earth',c:'#d9a441',bits:[0,0,1],t:'山 · 止静',tEn:'Mountain · Stillness',m:'丑艮寅',d:'金木可大畜其家。忌滔洪为乱。',dEn:'Metal and wood can greatly enrich the household. Beware of surging floods that bring disorder.'},
+    {n:'震',en:'Zhen',az:90,dir:'正东',dirEn:'East',el:'木',elEn:'Wood',c:'#62d99c',bits:[1,0,0],t:'雷 · 启动',tEn:'Thunder · Initiative',m:'甲卯乙',d:'寒侧当御外而收内；不可激无妄。',dEn:'On the cold side, guard against the outside and gather within; never provoke needlessly.'},
+    {n:'巽',en:'Xun',az:45,dir:'东北',dirEn:'North-east',el:'木',elEn:'Wood',c:'#7fe0a8',bits:[0,1,1],t:'风 · 流通',tEn:'Wind · Circulation',m:'辰巽巳',d:'炎方皓天为用，避其央为吉。',dEn:'Employ the bright sky of the hot quarter, and avoid its centre for good fortune.'},
+    {n:'离',en:'Li',az:0,dir:'正北',dirEn:'North',el:'火',elEn:'Fire',c:'#ff6a45',bits:[1,0,1],t:'火 · 光明',tEn:'Fire · Brightness',m:'丙午丁',d:'九运离火当令，背山面水吉上更佳。',dEn:'Li fire rules the Ninth Period. Mountain behind and water ahead makes good fortune better still.'},
+    {n:'坤',en:'Kun',az:315,dir:'西北',dirEn:'North-west',el:'土',elEn:'Earth',c:'#e0b060',bits:[0,0,0],t:'地 · 厚载',tEn:'Earth · Receptivity',m:'未坤申',d:'帷账之内收乾坤，不露为上。',dEn:'Gather Heaven and Earth within the curtains; concealment is best.'},
+    {n:'兑',en:'Dui',az:270,dir:'正西',dirEn:'West',el:'金',elEn:'Metal',c:'#f0e6c0',bits:[1,1,0],t:'泽 · 喜悦',tEn:'Lake · Joy',m:'庚酉辛',d:'兑宅阳处须谨慎，巽隅陷而茕茕。',dEn:'Dui houses must tread carefully on the yang side; a sunken Xun corner leaves one lonely.'},
   ];
   const MOUNTAINS = '子癸丑艮寅甲卯乙辰巽巳丙午丁未坤申庚酉辛戌乾亥壬'.split('');
   const BRANCHES  = '子丑寅卯辰巳午未申酉戌亥'.split('');
@@ -776,7 +776,7 @@
     b.addEventListener('pointerleave',()=>cursorEl.classList.remove('big'));
     grid.appendChild(b);
   });
-  info.innerHTML=`<h3><span class="zh">择一卦，观其方位</span><span class="en">Choose a trigram</span></h3><p class="zh">点击上方任一卦象，罗盘将转向它的方位。（传统说法，仅供参考）</p><p class="en">Tap a trigram and the compass will turn to its direction. (Traditional lore, for reference only.)</p>`;
+  info.innerHTML=`<h3><span class="zh">择一卦，观其方位</span><span class="en">Choose a trigram</span></h3><p class="zh">点击上方任一卦象，罗盘将转向它的方位。本罗盘按南半球排布：离在北，坎在南。</p><p class="en">Tap a trigram and the compass will turn to its direction. This compass follows the Southern Hemisphere: Li in the north, Kan in the south.</p>`;
   function select(i,btn){
     const t=TRIGRAMS[i];
     grid.querySelectorAll('.tri').forEach(x=>x.classList.toggle('on',x===btn));
@@ -791,7 +791,7 @@
     gsap.to(accent,{r:col.r,g:col.g,b:col.b,duration:1.2,ease:'power2.out'});
     document.documentElement.style.setProperty('--accent',t.c);
     gsap.fromTo(state,{spin:7},{spin:1,duration:2.6,ease:'power3.out'});
-    info.innerHTML=`<h3><span class="zh">${t.n}卦<em>${t.dir} · 五行属${t.el}</em></span><span class="en">${t.n} · ${t.en}<em>${t.dirEn} · ${t.elEn}</em></span></h3><p class="zh"><b>${t.t}</b><br>${t.d}</p><p class="en"><b>${t.tEn}</b><br>${t.dEn}</p>`;
+    info.innerHTML=`<h3><span class="zh">${t.n}宅<em>五行属${t.el} · ${t.m}三山</em></span><span class="en">${t.n} · ${t.en} House<em>${t.elEn} · ${t.dirEn}</em></span></h3><p class="zh"><b>${t.t}</b><br>${t.d}</p><p class="en"><b>${t.tEn}</b><br>${t.dEn}</p>`;
     gsap.fromTo(info.children,{opacity:0,y:14},{opacity:1,y:0,duration:.6,stagger:.08});
   }
 
